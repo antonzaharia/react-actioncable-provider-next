@@ -13,7 +13,7 @@ export default function cable(WrappedComponent, options) {
       this.setupCable(this.props);
     }
 
-    componentWillReceiveProps(nextProps) {
+    getDerivedStateFromProps(nextProps) {
       if (this.props.channel != nextProps.channel || this.props.room != nextProps.room) {
         this.unloadCable();
         this.setupCable(nextProps);
